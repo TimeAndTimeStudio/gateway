@@ -8,7 +8,8 @@ const AdmZip = require('adm-zip');
 
 const app = express();
 const PORT = Number(process.env.PORT || 10000);
-const STORE = process.env.STORE_DIR || '/var/data/starling';
+// Store runtime data under the project root (the directory used to start Node.js).
+const STORE = process.cwd();
 const PUBLIC_URL = (process.env.GATEWAY_PUBLIC_URL || '').replace(/\/$/, '');
 const GH_TOKEN = process.env.GITHUB_TOKEN || '';
 const GH_OWNER = process.env.GITHUB_OWNER || 'starling-client';
@@ -243,3 +244,4 @@ app.listen(PORT, '0.0.0.0', () => {
   pollRuns();
   setInterval(pollRuns, POLL_MS).unref();
 });
+                                                
