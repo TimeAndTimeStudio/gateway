@@ -1,0 +1,10 @@
+{
+  "name": "starling-github-build-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js gateway for Starling native mod builds through GitHub Actions",
+  "main": "src/server.js",
+  "scripts": {"start": "node src/server.js"},
+  "engines": {"node": ">=22"},
+  "dependencies": {"adm-zip": "^0.5.16", "express": "^5.1.0"}
+}
